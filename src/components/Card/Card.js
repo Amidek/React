@@ -16,7 +16,7 @@ class Card extends React.Component {
   render() {
     return(
       <section className={styles.component}>
-        
+
       </section>
     )
   }
