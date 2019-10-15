@@ -1,24 +1,13 @@
-import React from 'react';
-import styles from './Card.scss';
-import PropTypes from 'prop-types';
-import Creator from '../Creator/Creator.js';
+import React from "react";
+import styles from "./Card.scss";
+import PropTypes from "prop-types";
 
 class Card extends React.Component {
-
-  state = {
-    cards: this.props.cards || [],
-  }
-
   static propTypes = {
-    title: PropTypes.node.isRequired,
-  }
-
+    title: PropTypes.string.isRequired
+  };
   render() {
-    return(
-      <section className={styles.component}>
-
-      </section>
-    )
+    return <p className={styles.component}>{this.props.title}</p>;
   }
 }
 
