@@ -5,6 +5,9 @@ import List from '../List/List.js';
 import Creator from '../Creator/Creator.js';
 
 class App extends React.Component {
+  static propTypes = {
+    lists: Node,
+  }
   state = {
     lists: this.props.lists || [],
   }
@@ -17,11 +20,10 @@ class App extends React.Component {
           {
             key: state.lists.length ? state.lists[state.lists.length-1].key+1 : 0,
             title,
-            description,
             image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
-            columns: []
-          }
-        ]
+            columns: [],
+          },
+        ],
       }
     ));
   }
@@ -41,7 +43,7 @@ class App extends React.Component {
         </div>
         <List {...listData} />
       </main>
-    )
+    );
   }
 }
 

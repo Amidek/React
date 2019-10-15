@@ -4,30 +4,33 @@ import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon.js';
 import Creator from '../Creator/Creator.js';
-import Card from '../Card/Card.js'
+import Card from '../Card/Card.js';
 
 class Column extends React.Component {
-
+  static propTypes = {
+    cards: Node,
+    icon: Node,
+  }
   state = {
     cards: this.props.cards || [],
   };
 
   static propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
   };
 
   addCard(title) {
     this.setState(state => ({
-        cards: [
-          ...state.cards,
-          {
-            key: state.cards.length
-              ? state.cards[state.cards.length-1].key+1
-              : 0,
-            title
-          }
-        ]
-      }));
+      cards: [
+        ...state.cards,
+        {
+          key: state.cards.length
+            ? state.cards[state.cards.length-1].key+1
+            : 0,
+          title,
+        },
+      ],
+    }));
   }
 
   render() {
