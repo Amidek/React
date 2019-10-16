@@ -8,4 +8,8 @@ const Button = ({variant = '', ...otherProps}) => (
   />
 );
 
+Button.propTypes = {
+  variant: Node,
+};
 export default Button;
+
