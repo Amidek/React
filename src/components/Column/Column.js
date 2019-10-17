@@ -1,5 +1,5 @@
 import React from 'react';
-//import {settings} from '../../data/dataStore';
+import {settings} from '../../data/dataStore';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon.js';
@@ -8,14 +8,17 @@ import Card from '../Card/Card.js';
 
 
 class Column extends React.Component {
+
   static propTypes = {
     cards: Node,
     icon: Node,
+    title: PropTypes.string.isRequired,
+    column: PropTypes.array,
   }
 
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
+  }
 
   render() {
     const {cards} = this.props;

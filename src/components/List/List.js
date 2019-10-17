@@ -4,8 +4,8 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
-import Column from '../Column/ColumnContainer.js';
-//import Creator from '../Creator/Creator.js';
+import Column from '../Column/ColumnContainer';
+import Creator from '../Creator/Creator.js';
 
 class List extends React.Component {
 
@@ -13,7 +13,8 @@ class List extends React.Component {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     image: PropTypes.string,
-    columns: PropTypes.array,
+    addColumn: PropTypes.func,
+    columns: PropTypes.array.isRequired,
   }
 
   static defaultProps = {
@@ -21,7 +22,7 @@ class List extends React.Component {
   }
 
   render() {
-    const {title, image, description, columns} = this.props;
+    const {title, image, description, columns, addColumn} = this.props;
     return (
       <section className={styles.component}>
         <Hero titleText={title} image={image} />
@@ -29,15 +30,13 @@ class List extends React.Component {
           {ReactHtmlParser(description)}
         </div>
         <div className={styles.columns}>
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
-          ))}
+          {columns.map(columnData => {
+            <Column key={columnData.id} {...columnData} />;
+          })}
         </div>
-        {/*
         <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+          <Creator text={settings.columnCreatorText} action={addColumn} />
         </div>
-          */}
       </section>
     );
   }
