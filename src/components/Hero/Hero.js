@@ -4,15 +4,15 @@ import styles from './Hero.scss';
 import PropTypes from 'prop-types';
 
 const Hero = props => (
-  <header className={styles.component}>
+  <div className={styles.component}>
     <h2 className={styles.title}>{ReactHtmlParser(props.titleText)}</h2>
-    <img className={styles.image} src={props.srcLink}></img>
-  </header>
+    <img className={styles.image} src={props.image}></img>
+  </div>
 );
 
 Hero.propTypes = {
-  titleText: PropTypes.node.isRequired,
-  srcLink: PropTypes.string,
+  titleText: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Hero;
