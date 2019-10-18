@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './App.scss';
 import List from '../List/ListContainer.js';
+import PropTypes from 'prop-types';
 //import Creator from '../Creator/Creator.js';
 
 class App extends React.Component {
   static propTypes = {
-    lists: Array,
-    title: Node,
-    subtitle: Node,
+    lists: PropTypes.array.isRequired,
+    title: PropTypes.node.isRequired,
+    subtitle: PropTypes.node,
   }
   state = {
     lists: this.props.lists || [],
@@ -37,7 +38,7 @@ class App extends React.Component {
         <h2 className={styles.subtitle}>{subtitle}</h2>
         {lists.map(listData => (
           <List key={listData.id} {...listData} />
-        ))}    
+        ))}   
       </main>
     );
   }
