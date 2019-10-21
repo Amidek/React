@@ -1,26 +1,25 @@
-import {settings} from '../../data/dataStore';
-import ReactHtmlParser from 'react-html-parser';
 import React from 'react';
 import styles from './List.scss';
-import Hero from '../Hero/Hero.js';
+import Hero from '../Hero/Hero';
 import PropTypes from 'prop-types';
 import Column from '../Column/ColumnContainer';
-import Creator from '../Creator/Creator.js';
+import { settings } from '../../data/dataStore';
+import ReactHtmlParser from 'react-html-parser';
+import Creator from '../Creator/Creator';
 //import Container from '../Container/Container.js';
 
 class List extends React.Component {
 
   static propTypes = {
-    title: PropTypes.node.isRequired,
+    title: PropTypes.node,
     description: PropTypes.node,
+    columns: PropTypes.array,
     image: PropTypes.string,
-    columns: PropTypes.array.isRequired,
     addColumn: PropTypes.func,
-  }
-
+  };
   static defaultProps = {
     description: settings.defaultListDescription,
-  }
+  };
 
   render() {
     const {title, image, description, columns, addColumn} = this.props;

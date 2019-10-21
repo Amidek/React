@@ -4,19 +4,20 @@ import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 
 class Creator extends React.Component {
+
   static propTypes = {
     text: PropTypes.string,
-    action: Node,
-  }
+    action: PropTypes.func,
+  };
 
   static defaultProps = {
     text: 'Add new item',
-  }
+  };
 
   state = {
     value: '',
     visibleButtons: false,
-  }
+  };
 
   handleChange(event){
     // console.log(event);

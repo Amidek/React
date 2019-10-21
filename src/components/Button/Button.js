@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Button.scss';
+import PropTypes from 'prop-types';
 
 const Button = ({variant = '', ...otherProps}) => (
   <button 
@@ -9,7 +10,7 @@ const Button = ({variant = '', ...otherProps}) => (
 );
 
 Button.propTypes = {
-  variant: Node,
+  variant: PropTypes.node,
 };
 export default Button;
 
