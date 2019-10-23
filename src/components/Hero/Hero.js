@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './Hero.scss';
 import PropTypes from 'prop-types';
 
+
 const Hero = props => (
   <div className={styles.component}>
     <h2 className={styles.title}>

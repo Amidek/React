@@ -2,6 +2,19 @@ export const settings = {
   columnCreatorText: 'Add new column',
   cardCreatorText: 'Add new card',
   listCreatorText: 'Add new list',
+  header: {
+    iconName: 'air-freshener',
+  },
+  info: {
+    title: 'Info',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: 'https://images.pexels.com/photos/1323732/pexels-photo-1323732.jpeg?cs=srgb&dl=blue-blue-sky-bright-1323732.jpg&fm=jpg',
+  },
+  FAQ: {
+    title: 'FAQ',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image: 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?cs=srgb&dl=ask-blackboard-356079.jpg&fm=jpg',
+  },
   creator: {
     buttonOK: 'OK',
     buttonCancel: 'Cancel',
