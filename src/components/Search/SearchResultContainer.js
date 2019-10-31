@@ -1,12 +1,10 @@
 import {connect} from 'react-redux';
 import SearchResult from './SearchResult';
-import { getCardsFromList } from '../../redux/cardsRedux';
-import { createAction_addCard } from '../../redux/cardsRedux';
-
+import { getCardsForSearch } from '../../redux/cardsRedux';
+import createAction_addCard from '../../redux/cardsRedux';
 
 const mapStateToProps = (state, props) => ({
-  cards: getCardsFromList(state, props.id),
-  
+  cards: getCardsForSearch(state, props.match.params.id),
 });
   
 const mapDispatchToProps = (dispatch, props) => ({

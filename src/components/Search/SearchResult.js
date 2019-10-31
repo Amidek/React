@@ -1,36 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './Search.scss';
-import Container from '../Container/Container';
+import styles from './SearchResult.scss';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 class SearchResult extends React.Component {
-    static propTypes = {
-      cards: PropTypes.array,
-      title: PropTypes.string.isRequired,
-      searchString: PropTypes.string,
-      changeSearchString: PropTypes.func,
-    }
-    state = {
-      value: this.props.searchString || '',
-    };
-
-    handleOK(){
-      this.props.changeSearchString(this.state.value);
-    }
-
-    render() {
-      const {cards} = this.props;
-      return (
-        <Container className={styles.component}>
-          <div className={styles.cards}>
-            {cards.map(cardData => (
-              <Card key={cardData.id} {...cardData} />
-            ))}
-          </div>
-        </Container>
-      );
-    }
+static propTypes = {
+  cards: PropTypes.string,
+}
+render() {
+  const { cards } = this.props;
+  console.log(this.props);
+  return (
+    <section className={styles.component}>
+      {cards.map(cardData => (
+        <Card key={cardData.id} {...cardData} />
+      ))}
+    </section>
+  );
+}
 }
 
 export default SearchResult;
