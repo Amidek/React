@@ -6,7 +6,6 @@ export const getCardsForColumn = ({ cards }, columnId) =>
 export const getCardsForSearch = ({ cards }, searchString) =>
   cards.filter(card => new RegExp(searchString, 'i').test(card.title));
 
-  
 // action name creator
 const reducerName = 'cards';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -15,8 +14,8 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const ADD_CARD = createActionName('ADD_CARD');
 
 // action creators
-export const createAction_addCard = payload => ({ 
-  payload, 
+export const createAction_addCard = payload => ({
+  payload,
   type: ADD_CARD,
 });
 

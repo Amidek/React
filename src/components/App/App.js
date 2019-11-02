@@ -7,7 +7,7 @@ import { AnimatedSwitch } from 'react-router-transition';
 import FAQ from '../FAQ/FAQ';
 import styles from './App.scss';
 import List from '../List/ListContainer';
-import SearchResult from '../Search/SearchResult';
+import SearchResult from '../Search/SearchResultContainer';
 
 const App = () => (
   <BrowserRouter>
@@ -22,12 +22,10 @@ const App = () => (
         <Route exact path="/info" component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
         <Route exact path="/list/:id" component={List} />
-        <Route exact path='/search/' component={SearchResult} />
+        <Route exact path='/search/:id' component={SearchResult} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
 );
 
 export default App;
-
-<Route exact path='/FAQ' component={FAQ} />;
