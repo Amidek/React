@@ -15,7 +15,7 @@ describe('Component Hero', () => {
 
   it('should render correct title and image', () => {
     const expectedTitle = 'Lorem ipsum';
-    const expectedImage = 'image.jpg';
+    const expectedImage = 'image.png';
     const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage} />);
   
     const renderedTitle = component.find('.title').text();
@@ -25,7 +25,7 @@ describe('Component Hero', () => {
 
   it('renders correct classNames', () => {
     const mockVariants = 'small dummy';
-    const component = shallow(<Hero titleText='Lorem' imageSrc='image.jpg' variant={mockVariants} />);
+    const component = shallow(<Hero titleText='Lorem' imageSrc='image.png' variant={mockVariants} />);
     expect(component.hasClass('component')).toBe(true);
     expect(component.hasClass('small')).toBe(true);
     expect(component.hasClass('dummy')).toBe(true);
